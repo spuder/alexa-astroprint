@@ -3,9 +3,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 // console.log(`${process.env.CLIENT_ID}`);
 
-const url = 'wss://ws.astroprint.com/websocket'
+// const url = 'wss://ws.astroprint.com/websocket'
 const WebSocket = require('ws');
-const connection = new WebSocket(url);
+const connection = new WebSocket('wss://ws.astroprint.com/websocket');
 
 // Use requests library to get access_token
 var request = require('request');

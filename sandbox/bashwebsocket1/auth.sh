@@ -19,6 +19,8 @@ access_token=$(curl -s -X POST \
   -H 'Content-Type: application/x-www-form-urlencoded' \
   -d "client_secret=${client_secret}&client_id=${client_id}&grant_type=client_credentials" | jq .access_token)
 
-websocat wss://ws.astroprint.com/websocket
+websocat - wss://ws.astroprint.com/websocket
 
-{"type": "response","reqId": "0","payload": {"accessToken": "${access_token}"}}
+echo {"type": "response","reqId": "0","payload": {"accessToken": "${access_token}"}}
+#
+# echo {"type": "boxes", "payload": null, "reqId": "1234"}
