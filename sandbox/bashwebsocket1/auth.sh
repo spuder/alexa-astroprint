@@ -17,7 +17,7 @@ fi
 access_token=$(curl -s -X POST \
   https://api.astroprint.com/v2/token \
   -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d "client_secret=${client_secret}&client_id=${client_id}&grant_type=client_credentials" | jq .access_token)
+  -d "client_secret=${client_secret}&client_id=${client_id}&grant_type=client_credentials" | jq .access_token --raw-output)
 
 websocat - wss://ws.astroprint.com/websocket
 
