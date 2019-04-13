@@ -27,7 +27,7 @@ app.use(
 app.setHandler({
     LAUNCH() {
         if (this.getAccessToken()) {
-            tell.this('Success!');
+            this.tell('Success!');
         } else {
             this.alexaSkill().showAccountLinkingCard()
                 .tell('Please go into the Alexa app and link your account.');
