@@ -5,28 +5,25 @@ EM.run {
   # ws = Faye::WebSocket::Client.new('wss://echo.websocket.org')
   ws = Faye::WebSocket::Client.new('wss://ws.astroprint.com/websocket')
 
-foo = '{
-  "type": "response",
-  "reqId": "0",
-  "payload": {
-    "accessToken": "REDACTED"
-  }
-}'
+  foo = '{
+    "type": "response",
+    "reqId": "0",
+    "payload": {
+      "accessToken": "xxx"
+    }
+  }'
 
-bar = '{
-  "type": "boxes",
-  "payload": null,
-  "reqId": "1"
-}'
+  bar = '{
+    "type": "boxes",
+    "payload": null,
+    "reqId": "1"
+  }'
 
-# buzz = JSON.generate(JSON.parse("#{foo}"))
-# puts buzz.class
+  puts foo
 
-puts foo
-
-  ws.ping "hey there" do
-    puts 'pong'
-  end
+  # ws.ping "hey there" do
+  #   puts 'pong'
+  # end
 
   ws.on :open do |event|
     p [:open]
